@@ -8,14 +8,14 @@ Quick Start your RDMMS metrics visualization with grafana + prometheus + query-e
 
 ![architecture](./images/architecture.png)
 
-The core components in the architecture are Grafana and Prometheus.
+The core components in the architecture are **Grafana** and **Prometheus**.
 
-* Prometheus is responsible for collecting and storing metric data.
-* Grafana acts as the frontend that visualizes data queried from Prometheus using PromQL.
+* **Prometheus** is responsible for collecting and storing metric data.
+* **Grafana** acts as the frontend that visualizes data queried from Prometheus using PromQL.
 
-The query-exporter executes SQL queries from your RDBMS, transforming the results into metrics. These metrics will be periodically collected by Prometheus. For instance, this could include metrics such as the number of subscribers or the count of posts.
+The **query-exporter** executes SQL queries from your RDBMS, transforming the results into metrics. These metrics will be periodically collected by Prometheus. For instance, this could include metrics such as the number of subscribers or the count of posts.
 
-To collect metrics from the RDBMS, please open the query-exporter/config.yaml file and configure the DB connection settings, as well as write the necessary SQL queries. Below is an example!
+To collect metrics from the RDBMS, please open the `query-exporter/config.yaml` file and configure the DB connection settings, as well as write the necessary SQL queries. Below is an example!
 
 ```yaml
 databases:
@@ -69,7 +69,7 @@ services:
       - REMOTE_PORT=3306
 ```
 
-Create an ssh/config file and write the following content. The format is the same as the commonly known OpenSSH config. If necessary, place the PEM key inside the ssh folder.
+Create an `ssh/config` file and write the following content. The format is the same as the commonly known OpenSSH config. If necessary, place the PEM key inside the ssh folder.
 
 ```
 HOST example-server.com
