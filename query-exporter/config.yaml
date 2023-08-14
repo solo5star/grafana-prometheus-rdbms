@@ -1,0 +1,15 @@
+databases:
+  my-db:
+    dsn: mysql://my-username:my-password@my-database-host:3306/my-database
+
+metrics:
+  my_user_total:
+    type: gauge
+    description: Total user count
+
+queries:
+  user-total-query:
+    interval: 5
+    databases: [my-db]
+    metrics: [my_user_total]
+    sql: SELECT COUNT(*) AS my_user_total FROM member
